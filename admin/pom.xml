@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>adminManage</artifactId>
+        <groupId>com.link</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>admin</artifactId>
+    <packaging>war</packaging>
+    <name>admin Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <common.version>1.0</common.version>
+        <model.version>1.0</model.version>
+        <core.version>1.0</core.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.link</groupId>
+            <artifactId>common</artifactId>
+            <version>${common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.link</groupId>
+            <artifactId>model</artifactId>
+            <version>${model.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.link</groupId>
+            <artifactId>api</artifactId>
+            <version>${core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.link</groupId>
+            <artifactId>core</artifactId>
+            <version>${core.version}</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>admin</finalName>
+    </build>
+</project>

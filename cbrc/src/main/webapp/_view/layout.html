@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>中国银行业监督管理委员会-甘肃银监局</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="#(ctx)/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" type="text/css" href="#(ctx)/css/styles.css">
+</head>
+<body>
+    #include("head.html")
+    <div class="part_one">
+        <div class="box_wrap">
+            <div class="box_b_skin h_378">
+                <div class="box_tit">领导活动<a href="#(ctx)/list/1-c1b10bb1e6b144d498d4ff9e2dcfd4c1" class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=16)
+                    <li><a  href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div class="box_wrap">
+            <div class="box_b_skin mb_7">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <div class="ad_slide">
+                    <div class="Slide" id="slide">
+                        <ul class="slide-cont">
+                            #for(pic : newpics)
+                            <li class="slide-item">
+                                <a href="#(ctx)/detail/#(pic.id)" title="" target="blank"> <img src="#(host)#(pic.img)"> </a>
+                                <div class="slide-txt">
+                                    <div class="txt_bg"></div>
+                                    <a href=""  target="_blank">#(pic.title)</a>
+                                </div>
+                            </li>
+                            #end
+                        </ul>
+                        <div class="slide-nav">
+                            <a href="javascript:" class="nownav">1</a>
+                            <a href="javascript:">2</a>
+                            <a href="javascript:">3</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=5)
+                    <li><a  href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+
+        <div class="box_wrap">
+            <div class="box_b_skin mb_7">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=3)
+                    <li><a  href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+            <div class="box_b_skin mb_7">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=3)
+                    <li><a  href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=5)
+                    <li><a  href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div class="box_wrap mr_none">
+            <div class="box_b_skin h_378">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=10)
+                    <li><a  href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+                <div class="search">
+                    <h2>本站搜索</h2>
+                    <div class="sear_input">
+                        <input type="text" name="" class="input_skin">
+                        <button class="sear_btn">GO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full_ad">
+        <a href="#(ctx)/block/479e37539afb41138e2bff59128f5bf6"><img src="images/ad_1.jpg" title=""></a>
+    </div>
+    <div class="part_one">
+        <div class="box_wrap">
+            <div class="box_b_skin mb_7">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <div class="map"><img src="images/map.jpg" title=""></div>
+            </div>
+        </div>
+        <div class="box_wrap">
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=6)
+                    <li><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div class="box_wrap">
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=7)
+                    <li><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div class="box_wrap mr_none">
+            <div class="box_b_skin">
+                <div class="box_tit">快捷登录<a class="more_btn">更多>></a></div>
+                <a class="fast_enter" id="fast_icon_1">
+                    <h3>办公自动化</h3>
+                    <p>BRNGONG ZIDONGHUR</p>
+                </a>
+                <a class="fast_enter" id="fast_icon_2">
+                    <h3>系统管理登陆</h3>
+                    <p>XITONG DENGLU</p>
+                </a>
+                <a class="fast_enter" id="fast_icon_3">
+                    <h3>内网邮箱</h3>
+                    <p>NEIWANG YOUXIANG</p>
+                </a>
+                <a class="fast_enter" id="fast_icon_4">
+                    <h3>论坛登录</h3>
+                    <p>LUNTAN DENGLU</p>
+                </a>
+                <div class="pt_row">
+                    <p>友情链接</p>
+                    <select class="select_skin">
+                        <option>监督热线导航</option>
+                    </select>
+                </div>
+                <div class="pt_row">
+                    <p>
+                        <a>专题活动</a>
+                        <span class="fright">>></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full_ad">
+        <a><img src="images/ad_1.jpg" title=""></a>
+    </div>
+    <div class="part_one">
+        <a class="half_box">
+            <span class="half_img"><img src="images/news_1.jpg"></span>
+            <div class="half_txt">
+                <p>银行业属于现代服务行业，服务国家战略、服务实体经济、服务客户是银行的天职。自2006年起至今，以“百佳”、“千佳”为代表的文明规范服务品牌体系建设工作已经开展了十多年时间，已得到社会公众的广泛认可。一是消费者满意度稳步提升。银行业顺应客户需求变化，持续改进业务流程。</p>
+            </div>
+        </a>
+        <a class="half_box mr_none">
+            <span class="half_img"><img src="images/news_1.jpg"></span>
+            <div class="half_txt">
+                <p>银行业属于现代服务行业，服务国家战略、服务实体经济、服务客户是银行的天职。自2006年起至今，以“百佳”、“千佳”为代表的文明规范服务品牌体系建设工作已经开展了十多年时间，已得到社会公众的广泛认可。一是消费者满意度稳步提升。银行业顺应客户需求变化，持续改进业务流程。</p>
+            </div>
+        </a>
+    </div>
+    <div class="part_one">
+        <div class="box_wrap">
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=8)
+                    <li><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div class="box_wrap">
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=8)
+                    <li><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div class="box_wrap">
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=8)
+                    <li><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div class="box_wrap mr_none">
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=8)
+                    <li><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div class="box_wrap">
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=8)
+                    <li><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div class="box_wrap">
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=8)
+                    <li><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div class="box_wrap">
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=8)
+                    <li><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        <div class="box_wrap mr_none">
+            <div class="box_b_skin">
+                <div class="box_tit">领导活动<a class="more_btn">更多>></a></div>
+                <ul class="box_list">
+                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=8)
+                    <li><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></li>
+                    #end
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="part_one">
+        <div class="slide_big_ad">
+            <a class="buttons prev"></a>
+            <div class="viewport">
+                <ul class="overview">
+                    #for(pic : newpics)
+                    <!--<div><a href="#(ctx)/detail/#(pic.id)"><img width="100%" src="#(host)#(pic.img)"></a></div>-->
+                    <li><a href="javascript:void(0)"><img width="100%" src="#(host)#(pic.img)" /></a></li>
+                    #end
+                </ul>
+            </div>
+            <a class="buttons next"></a>
+        </div>
+    </div>
+
+    #include("foot.html")
+<script src="#(ctx)/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['element','carousel'], function(){
+        //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var element = layui.element,
+            carousel = layui.carousel;
+
+        //常规轮播
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+        });
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+</body>
+</html>

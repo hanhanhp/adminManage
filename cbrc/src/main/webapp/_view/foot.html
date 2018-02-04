@@ -1,0 +1,58 @@
+<div class="footer">
+    <div class="link">
+        <div class="pw">
+            <span>相关链接：</span>
+            <a>邮箱登录</a>
+            <a>政府相关</a>
+            <a>国内外金融管理相关部门</a>
+            <a>网站地图</a>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="tbl_cell">
+            <p>日期：#date()</p>
+            <!--<p>访问量：2017-8-30 星期三</p>-->
+        </div>
+        <div class="tbl_cell">
+            <span class="copyright_img"><img src="#(ctx)/images/copyright_img.jpg"></span>
+            <p>版权所以&nbsp;&nbsp;&nbsp;中国银行业监督管理委员会 甘肃监管局</p>
+            <p>地址：兰州市城关区南滨河东路635号 &nbsp;&nbsp; 邮政编码：730000</p>
+        </div>
+        <div class="tbl_cell">
+            <a><img src="#(ctx)/images/zfnet.jpg"></a>
+        </div>
+    </div>
+</div>
+
+<div class="important_notice" id="notice">
+    <div class="notice_tit">重要通知<a class="close_btn"></a></div>
+    <div class="notice_info">
+        <p><img src="#(ctx)/images/notice_img.jpg" title=""></p>
+        <p>关于公布甘肃银监单位考核标准2017年4月机室考察考核标准实施关于申报甘肃五一劳动奖章的通知施</p>
+    </div>
+</div>
+
+<script src="#(ctx)/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="#(ctx)/js/jquery.tinycarousel.js"></script>
+<script type="text/javascript" src="#(ctx)/js/zzsc.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.slide_big_ad').tinycarousel();
+
+        var msie6 = $.browser == 'msie' && $.browser.version < 7;
+        if (!msie6) {
+            var top = $('#notice').offset().top - parseFloat($('#notice').css('margin-top').replace(/auto/, 0));
+            $(window).scroll(function (event) {
+                var y = $(this).scrollTop();
+                if (y >= top) {
+                    $('#notice').addClass('fixed');
+                } else {
+                    $('#notice').removeClass('fixed');
+                }
+            });
+        }
+        $('.close_btn').click(function(){
+            $(this).parents('.important_notice').hide();
+        })
+    });
+</script>

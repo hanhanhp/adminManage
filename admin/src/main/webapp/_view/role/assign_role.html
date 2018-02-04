@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="#(ctx)/public/layui/css/layui.css" rel="stylesheet">
+    <script type="text/javascript" src="#(ctx)/public/layui/layui.js"></script>
+    <script type="text/javascript" src="#(ctx)/public/js/common.js"></script>
+</head>
+<body>
+<form class="layui-form" action="#(ctx)/role/saveRoleUser">
+    <div class="layui-form-item">
+
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-inline">
+            <input type="hidden" name="userId" id="userId" value="#(user.id ??)">
+            <input type="text" name="username" value="#(user.username ??)" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">角色</label>
+        <div class="layui-input-block">
+            #for(x : list)
+                <td>
+                    <input type="checkbox" name="listRole" value="#(x.id ??)" title="#(x.name ??)">
+                </td>
+            #end
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button id="submit" class="layui-btn" lay-submit lay-filter="subRole">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    layui.use(['form', 'layer'], function () {
+        var $ = layui.jquery,form = layui.form(),layer = layui.layer;
+        //初始化数据
+        //清空所有已选中的
+        $("input[type='checkbox']").prop("checked", false);
+        var jsonText = JSON.stringify('#(userRoles ??)');
+        var access = $.parseJSON(jsonText);
+        var arrayObj = new Array();
+        arrayObj = access.split(",");
+        //console.log(arrayObj);
+        var access_length = arrayObj.length;
+        //layer.msg(access_length,{time:1800});
+        if (access_length > 0) {
+            for ( var i = 0; i < access_length; i++) {
+                //console.log(arrayObj[i]);
+                arrayObj[i] = arrayObj[i].replace("[", "");
+                arrayObj[i] = arrayObj[i].replace("]", "");
+                arrayObj[i] = arrayObj[i].replace(" ", "");
+                //console.log("input[type='checkbox'][value='"+arrayObj[i]+"']");
+                $("input[type='checkbox'][value='" + arrayObj[i] + "']").prop("checked", "checked");
+            }
+        }
+
+        form.render();
+        //监听提交
+        form.on('submit(subRole)', function(data){
+            var userId = $("#userId").val();
+            var listRole = $("input[name='listRole']:checked").serialize().substr(9);
+            var listRoleId = [];//定义一个数组
+            listRoleId = listRole.split("&listRole=");
+            var params = $.param({
+                'listRoleId' : listRoleId,
+                'userId' : userId
+            }, true);
+            $.post("#(ctx)/role/saveRoleUser",params,function(res){
+                layer.msg(res.msg,{time:1800});
+            });
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

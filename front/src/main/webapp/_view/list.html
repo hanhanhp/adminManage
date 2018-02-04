@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="#(ctx)/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="#(ctx)/public/css/common.css">
+</head>
+<body>
+#include("head.html")
+<div class="main" style="overflow: hidden;">
+    <div class="layui-row">
+        <div class="layui-row">
+            <div class="layui-col-xs4 layui-col-sm4 layui-col-md8">
+                <div class="layui-tab layui-tab-brief" style="margin:0 10px">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">#(channelname)</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <ul>
+                                #for(article : page.list)
+                                    <li><span class="l"><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,45))</a></span><span class="r">#(sk.subString(article.createtime,10))</span></li>
+                                    #if(for.index%5==0)
+                                    <hr>
+                                    #end
+                                #end
+                            </ul>
+                            <div style="clear:both"></div>
+                            <div id="page"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+                <div class="layui-tab layui-tab-brief" style="margin:0 10px">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">热门推荐</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <ul>
+                                #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=10)
+                                <li><span class="l"><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,16))</a></span><span class="r">#(sk.subString(article.createtime,10))</span></li>
+                                #end
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+#include("foot.html")
+<script src="#(ctx)/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['element','laypage','carousel'], function(){
+        //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var element = layui.element,
+            carousel = layui.carousel,
+            laypage = layui.laypage;
+
+        //常规轮播
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+        });
+
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: '#(page.totalRow)' //数据总数，从服务端得到
+            ,limit: '#(page.pageSize)'
+            ,curr: '#(page.pageNumber)'
+            ,skin: '#1E9FFF'
+            ,first: false
+            ,last: true
+            ,jump: function(obj, first){
+                if(!first){
+                    //layer.msg('第 '+ obj.curr +' 页');
+                    window.location.href = obj.curr+"-"+"#(channelId)";
+                }
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

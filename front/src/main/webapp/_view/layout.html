@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="#(ctx)/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="#(ctx)/public/css/common.css">
+</head>
+<body>
+    #include("head.html")
+    <div class="main" style="overflow: hidden;">
+        <hr class="hr"/>
+        <div class="layui-row">
+            <div class="layui-col-xs4 layui-col-sm5 layui-col-md6">
+                <div class="layui-carousel" id="test1">
+                    <div carousel-item>
+                        #for(pic : newpics)
+                        <div><a href="#(ctx)/detail/#(pic.id)"><img width="100%" src="#(host)#(pic.img)"></a></div>
+                        #end
+
+                        <!--<div><a href="javascript:;"><img width="520" src="#(ctx)/public/img/2.png"></a></div>
+                        <div><a href="javascript:;"><img width="520" src="#(ctx)/public/img/3.png"></a></div>
+                        <div><a href="javascript:;"><img width="520" src="#(ctx)/public/img/4.png"></a></div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs4 layui-col-sm7 layui-col-md6">
+                <div class="layui-tab layui-tab-brief" style="margin:0 10px">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">监管动态</li>
+                        <li>通知公告</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <ul>
+                                #articlelist(cid='02ca42f8fbd94f4096cb585e28e3c098',pagenumber=1,pagesize=9)
+                                <li><span class="l"><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></span><span class="r">#(sk.subString(article.createtime,10))</span></li>
+                                #end
+                            </ul>
+                        </div>
+                        <div class="layui-tab-item">
+                            <ul>
+                                #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=9)
+                                <li><span class="l"><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,25))</a></span><span class="r">#(sk.subString(article.createtime,10))</span></li>
+                                #end
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="hr"/>
+        <div class="layui-row">
+            <div class="layui-row">
+                <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+                    <div class="layui-tab layui-tab-brief" style="margin:0 10px">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">新闻动态</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <ul>
+                                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=10)
+                                    <li><span class="l"><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,16))</a></span><span class="r">#(sk.subString(article.createtime,10))</span></li>
+                                    #end
+                                </ul>
+                                <div style="clear:both"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+                    <div class="layui-tab layui-tab-brief" style="margin:0 10px">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">新闻动态</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <ul>
+                                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=10)
+                                    <li><span class="l"><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,16))</a></span><span class="r">#(sk.subString(article.createtime,10))</span></li>
+                                    #end
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+                    <div class="layui-tab layui-tab-brief" style="margin:0 10px">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">新闻动态</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <ul>
+                                    #articlelist(cid='c1b10bb1e6b144d498d4ff9e2dcfd4c1',pagenumber=1,pagesize=10)
+                                    <li><span class="l"><a href="#(ctx)/detail/#(article.id)">#(sk.subString(article.title,16))</a></span><span class="r">#(sk.subString(article.createtime,10))</span></li>
+                                    #end
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    #include("foot.html")
+<script src="#(ctx)/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['element','carousel'], function(){
+        //导航的hover效果、二级菜单等功能，需要依赖element模块
+        var element = layui.element,
+            carousel = layui.carousel;
+
+        //常规轮播
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+        });
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+</body>
+</html>

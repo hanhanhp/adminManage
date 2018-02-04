@@ -1,0 +1,171 @@
+Table: t_channel
+--------+--------------+------+-----+---------+---------
+ Field  | Type         | Null | Key | Default | Remarks 
+--------+--------------+------+-----+---------+---------
+ id     | VARCHAR(36)  | NO   | PRI |         | 主键      
+ name   | VARCHAR(50)  | YES  |     |         | 名称      
+ parent | VARCHAR(36)  | YES  |     |         | 父级id    
+ url    | VARCHAR(255) | YES  |     |         | url地址   
+ type   | VARCHAR(10)  | YES  |     | 1       |         
+ hide   | VARCHAR(10)  | YES  |     | 0       |         
+ sorter | INT(10)      | YES  |     | 0       |         
+ target | VARCHAR(10)  | YES  |     | 0       |         
+ loaded | VARCHAR(10)  | YES  |     | 1       |         
+--------+--------------+------+-----+---------+---------
+
+Table: t_content
+-------------+---------------+------+-----+---------+---------
+ Field       | Type          | Null | Key | Default | Remarks 
+-------------+---------------+------+-----+---------+---------
+ id          | VARCHAR(36)   | NO   | PRI |         | 主键      
+ cid         | VARCHAR(36)   | YES  |     |         | 所属栏目ID  
+ title       | VARCHAR(255)  | YES  |     |         | 标题      
+ description | VARCHAR(1000) | YES  |     |         | 摘要      
+ view        | INT(10)       | YES  |     | 0       | 浏览量     
+ status      | VARCHAR(10)   | YES  |     |         | 状态      
+ hits        | VARCHAR(10)   | YES  |     |         | 置顶      
+ good        | VARCHAR(10)   | YES  |     |         | 推荐      
+ createtime  | VARCHAR(20)   | YES  |     |         | 创建时间    
+ modifytime  | VARCHAR(20)   | YES  |     |         | 修改时间    
+ authorId    | VARCHAR(36)   | YES  |     |         | 作者id    
+ authorName  | VARCHAR(50)   | YES  |     |         | 作者名称    
+ sorter      | INT(10)       | YES  |     |         | 排序      
+ content     | TEXT(65535)   | YES  |     |         | 内容      
+ bold        | VARCHAR(10)   | YES  |     | 1       |         
+ italic      | VARCHAR(10)   | YES  |     | 1       |         
+ color       | VARCHAR(10)   | YES  |     | 1       |         
+ img         | VARCHAR(255)  | YES  |     |         |         
+ startip     | VARCHAR(255)  | YES  |     |         |         
+ endip       | VARCHAR(255)  | YES  |     |         |         
+-------------+---------------+------+-----+---------+---------
+
+Table: t_log
+-----------+--------------+------+-----+---------+---------
+ Field     | Type         | Null | Key | Default | Remarks 
+-----------+--------------+------+-----+---------+---------
+ id        | VARCHAR(36)  | NO   | PRI |         |         
+ actionkey | VARCHAR(100) | YES  |     |         |         
+ opertime  | VARCHAR(20)  | YES  |     |         |         
+ ip        | VARCHAR(50)  | YES  |     |         |         
+ userid    | VARCHAR(36)  | YES  |     |         |         
+ username  | VARCHAR(100) | YES  |     |         |         
+ params    | TEXT(65535)  | YES  |     |         |         
+ result    | TEXT(65535)  | YES  |     |         |         
+-----------+--------------+------+-----+---------+---------
+
+Table: t_menu
+-------------+--------------+------+-----+---------+---------
+ Field       | Type         | Null | Key | Default | Remarks 
+-------------+--------------+------+-----+---------+---------
+ id          | VARCHAR(32)  | NO   | PRI |         |         
+ name        | VARCHAR(100) | YES  |     |         |         
+ parent      | VARCHAR(32)  | YES  |     |         |         
+ description | VARCHAR(255) | YES  |     |         |         
+ pageurl     | VARCHAR(255) | YES  |     |         |         
+ type        | VARCHAR(10)  | YES  |     |         |         
+ status      | VARCHAR(10)  | YES  |     |         |         
+ loaded      | VARCHAR(10)  | YES  |     |         |         
+ icon        | VARCHAR(100) | YES  |     |         |         
+-------------+--------------+------+-----+---------+---------
+
+Table: t_org
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | INT(10)      | NO   | PRI |         | 主键      
+ name       | VARCHAR(100) | YES  |     |         |         
+ comcode    | VARCHAR(10)  | YES  |     |         |         
+ type       | VARCHAR(10)  | YES  |     |         |         
+ sortno     | INT(10)      | YES  |     |         |         
+ desciption | VARCHAR(255) | YES  |     |         |         
+ status     | VARCHAR(4)   | YES  |     |         |         
+ pid        | VARCHAR(32)  | YES  |     |         |         
+------------+--------------+------+-----+---------+---------
+
+Table: t_permission
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | VARCHAR(32)  | NO   | PRI |         |         
+ name       | VARCHAR(50)  | YES  |     |         |         
+ value      | VARCHAR(50)  | YES  |     |         |         
+ url        | VARCHAR(255) | YES  |     |         |         
+ intro      | VARCHAR(255) | YES  |     |         |         
+ parent     | VARCHAR(32)  | YES  |     | 0       |         
+ created_at | VARCHAR(20)  | YES  |     |         |         
+ updated_at | VARCHAR(20)  | YES  |     |         |         
+ deleted_at | VARCHAR(20)  | YES  |     |         |         
+ loaded     | VARCHAR(10)  | YES  |     |         |         
+------------+--------------+------+-----+---------+---------
+
+Table: t_role
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ id         | VARCHAR(36)  | NO   | PRI |         |         
+ name       | VARCHAR(50)  | YES  |     |         |         
+ value      | VARCHAR(50)  | YES  |     |         |         
+ intro      | VARCHAR(255) | YES  |     |         |         
+ pid        | VARCHAR(36)  | YES  |     | 0       |         
+ created_at | VARCHAR(20)  | YES  |     |         |         
+ updated_at | VARCHAR(20)  | YES  |     |         |         
+ deleted_at | VARCHAR(20)  | YES  |     |         |         
+------------+--------------+------+-----+---------+---------
+
+Table: t_role_menu
+---------+-------------+------+-----+---------+---------
+ Field   | Type        | Null | Key | Default | Remarks 
+---------+-------------+------+-----+---------+---------
+ id      | VARCHAR(32) | NO   | PRI |         |         
+ role_id | VARCHAR(32) | YES  |     |         |         
+ menu_id | VARCHAR(32) | YES  |     |         |         
+---------+-------------+------+-----+---------+---------
+
+Table: t_role_permission
+---------------+-------------+------+-----+---------+---------
+ Field         | Type        | Null | Key | Default | Remarks 
+---------------+-------------+------+-----+---------+---------
+ id            | VARCHAR(32) | NO   | PRI |         |         
+ role_id       | VARCHAR(32) | YES  |     |         |         
+ permission_id | VARCHAR(32) | YES  |     |         |         
+---------------+-------------+------+-----+---------+---------
+
+Table: t_user
+--------------+--------------+------+-----+---------+---------
+ Field        | Type         | Null | Key | Default | Remarks 
+--------------+--------------+------+-----+---------+---------
+ id           | VARCHAR(32)  | NO   | PRI |         |         
+ username     | VARCHAR(50)  | YES  |     |         |         
+ providername | VARCHAR(50)  | YES  |     |         |         
+ email        | VARCHAR(200) | YES  |     |         |         
+ phone        | VARCHAR(50)  | YES  |     |         |         
+ password     | VARCHAR(200) | YES  |     |         |         
+ hasher       | VARCHAR(200) | YES  |     |         |         
+ salt         | VARCHAR(200) | YES  |     |         |         
+ avatar_url   | VARCHAR(255) | YES  |     |         |         
+ first_name   | VARCHAR(10)  | YES  |     |         |         
+ last_name    | VARCHAR(10)  | YES  |     |         |         
+ full_name    | VARCHAR(20)  | YES  |     |         |         
+ create_at    | VARCHAR(20)  | YES  |     |         |         
+ update_at    | VARCHAR(20)  | YES  |     |         |         
+ delete_at    | VARCHAR(20)  | YES  |     |         |         
+--------------+--------------+------+-----+---------+---------
+
+Table: t_user_org
+---------+-------------+------+-----+---------+---------
+ Field   | Type        | Null | Key | Default | Remarks 
+---------+-------------+------+-----+---------+---------
+ id      | VARCHAR(32) | NO   | PRI |         |         
+ user_id | VARCHAR(32) | YES  |     |         |         
+ org_id  | INT(10)     | YES  |     |         |         
+---------+-------------+------+-----+---------+---------
+
+Table: t_user_role
+---------+-------------+------+-----+---------+---------
+ Field   | Type        | Null | Key | Default | Remarks 
+---------+-------------+------+-----+---------+---------
+ id      | VARCHAR(32) | NO   | PRI |         |         
+ user_id | VARCHAR(32) | YES  |     |         |         
+ role_id | VARCHAR(32) | YES  |     |         |         
+---------+-------------+------+-----+---------+---------
+
