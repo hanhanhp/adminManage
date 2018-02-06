@@ -28,6 +28,7 @@ public class BaseServiceImpl implements BaseServiceI{
      * @data: 2017-06-02 11:53
     */
     @Before(Tx.class)
+    @Override
     public ResultJson saveOrUpdate(Model t, String id, String table, JqGrid jqGrid) {
         ResultJson result = new ResultJson();
         try {
@@ -71,6 +72,7 @@ public class BaseServiceImpl implements BaseServiceI{
      * @author: linkzz
      * @data: 2017-06-02 11:53
     */
+    @Override
     public DataGrid dataGrid(JqGrid jqGrid, Model t, String table) {
         DataGrid dataGrid = new DataGrid();
         String select = "select * ";
@@ -116,6 +118,7 @@ public class BaseServiceImpl implements BaseServiceI{
      * @author: linkzz
      * @data: 2017-06-02 11:53
      */
+    @Override
     public DataGrid treeDataGrid(JqGrid jqGrid, Model t, String table) {
         DataGrid dataGrid = new DataGrid();
         String select = "select * ";
